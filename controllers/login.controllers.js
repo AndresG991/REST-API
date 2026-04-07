@@ -3,7 +3,7 @@ import { db_connect } from "../db.js";
 export const login = async (req, res) => {
     const sql = db_connect();
     const {username, password} = req.body;
-    const query = "SELECT * FROM users WHERE username = $1";
+    const text = "SELECT * FROM users WHERE username = $1";
     const values = [username];
     const result = await sql.query(text, values);
 
