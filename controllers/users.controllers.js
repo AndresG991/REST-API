@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
 
 export const getUser = async (req, res) => {
     const sql = db_connect();
-    const query = "SELECT # FROM users WHERE id = $1";
+    const query = "SELECT * FROM users WHERE id = $1";
     const values = [req.params.id];
     const result = await sql.query(query, values);
 
